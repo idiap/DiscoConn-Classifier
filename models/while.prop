@@ -1,0 +1,294 @@
+#
+# Features
+#
+
+useSum=true
+
+1.useSplitWords=true
+1.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+1.splitWordsIgnoreRegexp=\\s+
+1.useSplitPrefixSuffixNGrams=true
+1.maxNGramLeng=3
+1.minNGramLeng=1
+1.splitWordShape=chris4
+
+2.useSplitWords=true
+2.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+2.splitWordsIgnoreRegexp=\\s+
+2.useSplitPrefixSuffixNGrams=true
+2.maxNGramLeng=3
+2.minNGramLeng=1
+2.splitWordShape=chris4
+
+3.useSplitWords=true
+3.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+3.splitWordsIgnoreRegexp=\\s+
+3.useSplitPrefixSuffixNGrams=true
+3.maxNGramLeng=3
+3.minNGramLeng=1
+3.splitWordShape=chris4
+
+4.useSplitWords=true
+4.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+4.splitWordsIgnoreRegexp=\\s+
+4.useSplitPrefixSuffixNGrams=true
+4.maxNGramLeng=3
+4.minNGramLeng=1
+4.splitWordShape=chris4
+
+5.useSplitWords=true
+5.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+5.splitWordsIgnoreRegexp=\\s+
+5.useSplitPrefixSuffixNGrams=true
+5.maxNGramLeng=3
+5.minNGramLeng=1
+5.splitWordShape=chris4
+
+6.useSplitWords=true
+6.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+6.splitWordsIgnoreRegexp=\\s+
+6.useSplitPrefixSuffixNGrams=true
+6.maxNGramLeng=3
+6.minNGramLeng=1
+6.splitWordShape=chris4
+
+7.useSplitWords=true
+7.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+7.splitWordsIgnoreRegexp=\\s+
+7.useSplitPrefixSuffixNGrams=true
+7.maxNGramLeng=3
+7.minNGramLeng=1
+7.splitWordShape=chris4
+
+8.useSplitWords=true
+8.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+8.splitWordsIgnoreRegexp=\\s+
+8.useSplitPrefixSuffixNGrams=true
+8.maxNGramLeng=3
+8.minNGramLeng=1
+8.splitWordShape=chris4
+
+9.useSplitWords=true
+9.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+9.splitWordsIgnoreRegexp=\\s+
+9.useSplitPrefixSuffixNGrams=true
+9.maxNGramLeng=3
+9.minNGramLeng=1
+9.splitWordShape=chris4
+
+10.useSplitWords=true
+10.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+10.splitWordsIgnoreRegexp=\\s+
+10.useSplitPrefixSuffixNGrams=true
+10.maxNGramLeng=3
+10.minNGramLeng=1
+10.splitWordShape=chris4
+
+11.useSplitWords=true
+11.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+11.splitWordsIgnoreRegexp=\\s+
+11.useSplitPrefixSuffixNGrams=true
+11.maxNGramLeng=3
+11.minNGramLeng=1
+11.splitWordShape=chris4
+
+12.useSplitWords=true
+12.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+12.splitWordsIgnoreRegexp=\\s+
+12.useSplitPrefixSuffixNGrams=true
+12.maxNGramLeng=3
+12.minNGramLeng=1
+12.splitWordShape=chris4
+
+13.useSplitWords=true
+13.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+13.splitWordsIgnoreRegexp=\\s+
+13.useSplitPrefixSuffixNGrams=true
+13.maxNGramLeng=3
+13.minNGramLeng=1
+13.splitWordShape=chris4
+
+14.useSplitWords=true
+14.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+14.splitWordsIgnoreRegexp=\\s+
+14.useSplitPrefixSuffixNGrams=true
+14.maxNGramLeng=3
+14.minNGramLeng=1
+14.splitWordShape=chris4
+
+15.useSplitWords=true
+15.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+15.splitWordsIgnoreRegexp=\\s+
+15.useSplitPrefixSuffixNGrams=true
+15.maxNGramLeng=3
+15.minNGramLeng=1
+15.splitWordShape=chris4
+
+16.useSplitWords=true
+16.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+16.splitWordsIgnoreRegexp=\\s+
+16.useSplitPrefixSuffixNGrams=true
+16.maxNGramLeng=3
+16.minNGramLeng=1
+16.splitWordShape=chris4
+
+17.useSplitWords=true
+17.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+17.splitWordsIgnoreRegexp=\\s+
+17.useSplitPrefixSuffixNGrams=true
+17.maxNGramLeng=3
+17.minNGramLeng=1
+17.splitWordShape=chris4
+
+17.useSplitWords=true
+17.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+17.splitWordsIgnoreRegexp=\\s+
+17.useSplitPrefixSuffixNGrams=true
+17.maxNGramLeng=3
+17.minNGramLeng=3
+17.splitWordShape=chris4
+
+18.useSplitWords=true
+18.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+18.splitWordsIgnoreRegexp=\\s+
+18.useSplitPrefixSuffixNGrams=true
+18.maxNGramLeng=3
+18.minNGramLeng=1
+18.splitWordShape=chris4
+
+19.logTransform=true
+
+20.useSplitWords=true
+20.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+20.splitWordsIgnoreRegexp=\\s+
+20.useSplitPrefixSuffixNGrams=true
+20.maxNGramLeng=3
+20.minNGramLeng=1
+20.splitWordShape=chris4
+
+21.useSplitWords=true
+21.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+21.splitWordsIgnoreRegexp=\\s+
+21.useSplitPrefixSuffixNGrams=true
+21.maxNGramLeng=3
+21.minNGramLeng=1
+21.splitWordShape=chris4
+
+22.useSplitWords=true
+22.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+22.splitWordsIgnoreRegexp=\\s+
+22.useSplitPrefixSuffixNGrams=true
+22.maxNGramLeng=3
+22.minNGramLeng=1
+22.splitWordShape=chris4
+
+23.useSplitWords=true
+23.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+23.splitWordsIgnoreRegexp=\\s+
+23.useSplitPrefixSuffixNGrams=true
+23.maxNGramLeng=3
+23.minNGramLeng=1
+23.splitWordShape=chris4
+
+24.realValued=true
+
+25.useSplitWords=true
+25.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+25.splitWordsIgnoreRegexp=\\s+
+25.useSplitPrefixSuffixNGrams=true
+25.maxNGramLeng=3
+25.minNGramLeng=1
+25.splitWordShape=chris4
+
+26.useSplitWords=true
+26.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+26.splitWordsIgnoreRegexp=\\s+
+26.useSplitPrefixSuffixNGrams=true
+26.maxNGramLeng=3
+26.minNGramLeng=1
+26.splitWordShape=chris4
+
+27.realValued=true
+
+28.useSplitWords=true
+28.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+28.splitWordsIgnoreRegexp=\\s+
+28.useSplitPrefixSuffixNGrams=true
+28.maxNGramLeng=3
+28.minNGramLeng=1
+28.splitWordShape=chris4
+
+29.useSplitWords=true
+29.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+29.splitWordsIgnoreRegexp=\\s+
+29.useSplitPrefixSuffixNGrams=true
+29.maxNGramLeng=3
+29.minNGramLeng=1
+29.splitWordShape=chris4
+
+30.realValued=true
+
+31.useSplitWords=true
+31.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+31.splitWordsIgnoreRegexp=\\s+
+31.useSplitPrefixSuffixNGrams=true
+31.maxNGramLeng=3
+31.minNGramLeng=1
+31.splitWordShape=chris4
+
+32.useSplitWords=true
+32.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+32.splitWordsIgnoreRegexp=\\s+
+32.useSplitPrefixSuffixNGrams=true
+32.maxNGramLeng=3
+32.minNGramLeng=1
+32.splitWordShape=chris4
+
+33.realValued=true
+
+34.useSplitWords=true
+34.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+34.splitWordsIgnoreRegexp=\\s+
+34.useSplitPrefixSuffixNGrams=true
+34.maxNGramLeng=3
+34.minNGramLeng=1
+34.splitWordShape=chris4
+
+35.useSplitWords=true
+35.splitWordsTokenizerRegexp=[\\p{L}][\\p{L}0-9]*|(?:\\$ ?)?[0-9]+(?:\\.[0-9]{2})?%?|\\s+|[\\x80-\\uFFFD]|.
+35.splitWordsIgnoreRegexp=\\s+
+35.useSplitPrefixSuffixNGrams=true
+35.maxNGramLeng=3
+35.minNGramLeng=1
+35.splitWordShape=chris4
+
+36.realValued=true
+
+#
+# Printing
+#
+printClassifier=HighWeight
+printClassifierParam=100000
+justify=true
+
+loadClassifier=/path/to/dcs/models/while_classifier.ser.gz
+
+#
+# Mapping
+#
+goldAnswerColumn=0
+displayedColumn=1
+
+#
+# Optimization
+#
+intern=true
+sigma=3
+useQN=true
+QNsize=15
+tolerance=1e-4
+
+#
+# Input
+#
+testFile=/path/to/while.test

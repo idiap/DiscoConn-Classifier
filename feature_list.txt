@@ -1,0 +1,36 @@
+Connective	while
+POS tag	IN
+first verb	has
+POS tag	AUX
+first aux. verb	have_third
+verb after conn	has
+POS tag	AUX
+aux. verb after	have_third
+previous word	years
+POS tag	NNS
+following word	the
+POS tag	DET
+first word	agricultural
+POS tag	JJ
+last word	today
+POS tag	NNS
+Punctuation	A,CA
+Syntactical Ancestors	|S1||S||NP||JJ||NN|
+WordNet sim. value	2.76
+Antonyms	same-different
+Aux.verb chain	has-has
+Temporal ordering	OCCURRENCE-NONE-BEFORE-POS
+Dependency Connective	TMP
+Connective Position	13
+Prev. verb 	
+Dependency prev. verb	ROOT
+Prev. verb position	3
+Prev. word 	
+Dependency prev. word	PMOD
+Prev. word position	12
+Foll. word 	
+Dependency foll. word	NMOD
+Foll. word position	14
+Foll. verb 	
+Dependency foll. verb	SUB
+Foll. verb position	18
