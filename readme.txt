@@ -10,8 +10,6 @@ This package consists of the following:
 1. Classifier models in order to tag instances of 7 discourse connectives according to the discourse relation they signal in raw and unseen English text
 2. A feature extraction script in order to generate test instances and feature vectors for the connectives to disambiguate
 
-These models and scripts can be used to disambiguate discourse connectives in raw and unseen English text.
-   
 See the sections below for instructions on how to run the scripts.
 
 If you make use of this software, please consider citing the following papers:
@@ -41,12 +39,14 @@ If you make use of this software, please consider citing the following papers:
 Instructions: Disambiguating Discourse Connectives
 --------------------------------------------------
 
-The necessary scripts and models can be found in the directory 'dcs' of the package.
+Dependencies:
 
 Install WordNet (http://wordnet.princeton.edu/) and set the environment variable WNHOME to its directory
 Install the perl module WordNet::QueryData from cpan: http://search.cpan.org/~jrennie/WordNet-QueryData-1.49/QueryData.pm
 You can point to it from the parsedUnseenExtractor.pl script in line 43.
 Install the Stanford classifier (http://nlp.stanford.edu/software/classifier.shtml)
+
+Procedure:
 
 1. Prepare a raw UTF-8 text file of your English text in which you want classify the connectives
 
@@ -70,9 +70,9 @@ and put the parsed files into corresponding directories.
 
 Note that this can take time for a larger set of sentences, as a lot of queries to WordNet are needed.
 
-5. On the test set output, you can now run the classifier model:
+5. On the test set output, you can now run the classifier models (which are in the subdirectory 'models' of this package):
 
-./java -Xms1g -Xmx3g -jar /path/to/classifier/stanford-classifier.jar -props /path/to/cds/models/(although|although|however|meanwhile|since|though|while|yet).prop
+./java -Xms1g -Xmx3g -jar /path/to/classifier/stanford-classifier.jar -props /path/to//models/(although|although|however|meanwhile|since|though|while|yet).prop
 
 In the prop-files, change the paths to the models and to the test sets.
 The classifier outputs a file classifier_answers.txt with the discourse relations and probabilities.
