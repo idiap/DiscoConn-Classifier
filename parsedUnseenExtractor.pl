@@ -54,7 +54,7 @@ use WordNet::SenseRelate::AllWords;
 use WordNet::QueryData;
 use WordNet::Tools;
 use WordNet::Similarity::path;
-  
+
 # construct WordNet queries	
 my $qd = WordNet::QueryData->new;
 defined $qd or die "Construction of WordNet::QueryData failed";
@@ -82,22 +82,14 @@ my @antonym_chains; # array of antonyms, generated in infer_antonyms();
 # cleaning dependency parses, getting simplified format
 clean_dependency();
 
-wait;
-
 # check if parsed files are all complete, will die if not
 check_parses();
-
-wait;
 
 # find syntactic, TimeML and WordNet features, generate initial vectors
 extract_features($connective);
 
-wait;
-
 # generate a maxent test file with syntactic features
 create_maxent($connective);
-
-wait;
 
 # generate dependency features as well and clean up
 create_maxent_extended($connective);
@@ -147,12 +139,11 @@ sub extract_features {
 	
 	my $connective = $_[0];
 
-	$connective =~ s/(.*?)\_.*/\1/; 			# normalize connective phrase from file name
 	my $casedconnective = ucfirst($connective); # upper-case the connective to have all occurrences
 
 	my $connwordform;			# the cased connective (sentence-initial or not)
 	my @connwordforms;
-	my $class;					# class (last): the connective sense to be found
+	my $class;				# class : the connective sense to be found, here just ? as test instances
 	my @classes;
 	my $selfcategory;			# POS tag of the connective
 	my @selfcategories;
@@ -190,15 +181,13 @@ sub extract_features {
 	my $casedlastwordsent;			# its lowercased form
 	my @lastwordsents;
 	my @lastwordsentsposis;
-	my @sentpatterns;
-	my @syntaxchains;
+	my @sentpatterns;			# punctuation pattern in the sentence
+	my @syntaxchains;			# syntactical path to the connective
 	
 	# open Charniak parsed file
-    open (PARSEDFILE, "<$parsedfile") or die "cannot open $parsedfile, $!";
+    	open (PARSEDFILE, "<$parsedfile") or die "cannot open $parsedfile, $!";
 		my @parsedfile_content = <PARSEDFILE>;
-		#DEBUG
-		# print "@parsedfile_content\n";
-    close (PARSEDFILE);
+	close (PARSEDFILE);
 
 	my $counter = 0; # to keep track of instances    
 
@@ -227,10 +216,7 @@ sub extract_features {
 			$firstverb = "NOVERB";
 			$firstverbword = "NOVERBWORD";
 		}
-		if ($firstverbword =~ /(\'|\"|\%|\,)/) {
-				my $regex = $1;
-			$firstverbword =~ s/$regex(.*)/\1/; # normalize
-		}
+		$firstverbword = special_chars($firstverbword);
 		push (@firstverbs, $firstverb);
 		push (@firstverbwords, $firstverbword);
 		push (@wordnetcontext, $firstverbword);
@@ -247,10 +233,7 @@ sub extract_features {
 			$firstverbafterconn = "NOVERB";
 			$firstverbafterconnword = "NOVERBWORD";
 		}	
-		if ($firstverbafterconnword =~ /(\'|\"|\%|\,)/) {
-			my $regex = $1;
-			$firstverbafterconnword =~ s/$regex(.*)/\1/; # normalize
-		}
+		$firstverbafterconnword = special_chars($firstverbafterconnword);
 		push (@firstverbsafterconn, $firstverbafterconn);
 		push (@firstverbafterconnwords, $firstverbafterconnword);
 		push (@wordnetcontext, $firstverbafterconnword);
@@ -265,9 +248,9 @@ sub extract_features {
 		}
 		if ($connwordform =~ /$casedconnective/) {
 			$casedpreviousword = "NOPR";			# if there is no previous word (i.e. the connective is the first word)
-			$previouswordpos = "NOPOS";				# if there is no previous POS tag
+			$previouswordpos = "NOPOS";			# if there is no previous POS tag
 		}
-		$casedpreviousword = special_chars($casedpreviousword);	
+		$casedpreviousword = special_chars($casedpreviousword);
 		push(@previouswords, $casedpreviousword);
 		push(@previouswordsposis, $previouswordpos); 
 		push(@wordnetcontext, $casedpreviousword);
@@ -298,14 +281,14 @@ sub extract_features {
 			$casedfirstwordsent = $firstwordsent;
 		}
 		if ($connwordform =~ /$casedconnective/) {		
-			$casedfirstwordsent = "NOFIRST";			# if there is no first word (i.e. the connective is the first word)
-			$firstwordsentpos = "NOPOS";				# if there is no first POS tag
+			$casedfirstwordsent = "NOFIRST";		# if there is no first word (i.e. the connective is the first word)
+			$firstwordsentpos = "NOPOS";			# if there is no first POS tag
 		}		
 		$casedfirstwordsent = special_chars($casedfirstwordsent);	
 		push(@firstwordsents, $casedfirstwordsent);
 		push(@firstwordsentsposis, $firstwordsentpos);
 		push(@wordnetcontext, $casedfirstwordsent);
-		$line =~ /([A-Z\d\-\$]{1,8})\s([A-Za-z\-\d\/\*\.\%\?]*)[\)\s]*\(\.\s(\.|\?|\!)/;	# get last word in sentence
+		$line =~ /([A-Z\d\-\$]{1,8})\s([A-Za-z\-\d\/\*\.\%\?]*)[\)\s]*\(\.\s(\.|\?|\!)/; # get last word in sentence
 		$lastwordsentpos = $1;
 		$lastwordsent = $2;
 		if ($lastwordsent =~ /^[A-Z]/) {
@@ -975,6 +958,28 @@ sub get_antonyms {
 	 	my @return = @final_antonyms;
 }
 
+sub infer_antonyms
+{
+	my $line = $_[0];
+	my $pair = $_[1];
+	
+	my $answer;
+	my @answers;
+	
+	my @words = split(/\-/, $pair);
+	
+	for (my $i = 0; $i <= $#words; $i++) {
+		if ($words[$i] !~ /\?/ && $words[$i + 1] !~ /\?/ && $line =~ /$words[$i]/ && $line =~ /$words[$i + 1]/) {
+			$answer = "yes";
+		}
+		else {
+			$answer = "no";
+		}
+		push (@answers,$answer);
+	}
+	my @return = @answers;
+}
+
 sub get_temporal_features {
 	
 	my @finalevents;
@@ -1049,82 +1054,6 @@ sub get_temporal_features {
 	}
 	close(TARSQI);
 	my @return = @temporalfeatures;	
-}
-
-sub infer_antonyms
-{
-	my $line = $_[0];
-	my $pair = $_[1];
-	
-	my $answer;
-	my @answers;
-	
-	my @words = split(/\-/, $pair);
-	
-	for (my $i = 0; $i <= $#words; $i++) {
-		if ($words[$i] !~ /\?/ && $words[$i + 1] !~ /\?/ && $line =~ /$words[$i]/ && $line =~ /$words[$i + 1]/) {
-			$answer = "yes";
-		}
-		else {
-			$answer = "no";
-		}
-		push (@answers,$answer);
-	}
-	my @return = @answers;
-}
-
-sub normalize_auxtype {
-	
-	my $auxverb = $_[0];
-	
-	my $auxtype;
-	
-	if ($auxverb =~ /am|is|are/) {	     # generalize the aux type
-					$auxtype = "be_present";
-				}
-				elsif ($auxverb =~ /was|were/) {
-					$auxtype = "be_past";
-				}
-				elsif ($auxverb =~ /been/) {
-					$auxtype = "be_part";
-				}
-				elsif ($auxverb =~ /being/) {
-					$auxtype = "be_gerund";
-				}
-				elsif ($auxverb =~ /be/) {
-					$auxtype = "be_inf";
-				}
-				elsif ($auxverb =~ /has/) {
-					$auxtype = "have_third";
-				}
-				elsif ($auxverb =~ /have/) {
-					$auxtype = "have_inf";
-				}
-				elsif ($auxverb =~ /having/) {
-					$auxtype = "have_gerund";
-				}
-				elsif ($auxverb =~ /had/) {
-					$auxtype = "have_past";
-				}
-				elsif ($auxverb =~ /done/) {
-					$auxtype = "do_part";
-				}
-				elsif ($auxverb =~ /does/) {
-					$auxtype = "do_third";
-				}
-				elsif ($auxverb =~ /do/) {
-					$auxtype = "do_inf";
-				}
-				elsif ($auxverb =~ /did/) {
-					$auxtype = "do_past";
-				}
-				elsif ($auxverb =~ /need/) {
-					$auxtype = "need_inf";
-				}
-		else {
-			$auxtype = "not_found";	       # for sentences without auxiliary verb
-		}
-	return $auxtype;
 }
 
 sub create_maxent_extended {
@@ -1333,10 +1262,7 @@ sub create_maxent_extended {
 			$previousword = "NOPR";
 			$previousworddependency = "NODEP";		
 		}
-		if ($previousword =~ /%|,|'|"/) {
-		    $previousword =~ s/\'|"//g;
-			$previousword = "'$previousword'";	# special characters
-		}
+		$previousword = special_chars($previousword);
 		if ($previouswordposition eq "") {
 			$previouswordposition = "0";
 		}
@@ -1433,10 +1359,65 @@ sub special_chars {
 	
 	my $text = $_[0];
 	
-	if ($text =~ /%|,|'|"/) { 	# special characters
-		$text = "'text'"; 
+	if ($text =~ /(\%|\,|\'|\"|\,)/) {
+		my $special_char = $1;
+		$text =~ s/(.*?)$special_char.*/\1/; 
 	}	
 	return $text;
+}
+
+sub normalize_auxtype {
+	
+	my $auxverb = $_[0];
+	
+	my $auxtype;
+	
+	if ($auxverb =~ /am|is|are/) {	     # generalize the aux type
+					$auxtype = "be_present";
+				}
+				elsif ($auxverb =~ /was|were/) {
+					$auxtype = "be_past";
+				}
+				elsif ($auxverb =~ /been/) {
+					$auxtype = "be_part";
+				}
+				elsif ($auxverb =~ /being/) {
+					$auxtype = "be_gerund";
+				}
+				elsif ($auxverb =~ /be/) {
+					$auxtype = "be_inf";
+				}
+				elsif ($auxverb =~ /has/) {
+					$auxtype = "have_third";
+				}
+				elsif ($auxverb =~ /have/) {
+					$auxtype = "have_inf";
+				}
+				elsif ($auxverb =~ /having/) {
+					$auxtype = "have_gerund";
+				}
+				elsif ($auxverb =~ /had/) {
+					$auxtype = "have_past";
+				}
+				elsif ($auxverb =~ /done/) {
+					$auxtype = "do_part";
+				}
+				elsif ($auxverb =~ /does/) {
+					$auxtype = "do_third";
+				}
+				elsif ($auxverb =~ /do/) {
+					$auxtype = "do_inf";
+				}
+				elsif ($auxverb =~ /did/) {
+					$auxtype = "do_past";
+				}
+				elsif ($auxverb =~ /need/) {
+					$auxtype = "need_inf";
+				}
+		else {
+			$auxtype = "not_found";	       # for sentences without auxiliary verb
+		}
+	return $auxtype;
 }
 
 sub get_sentence_pattern {
