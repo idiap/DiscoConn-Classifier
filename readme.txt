@@ -2,7 +2,7 @@ DiscoConn-Classifiers
 =====================
 
 Copyright (c) 2013 Idiap Research Institute, http://www.idiap.ch/
-Written by Thomas Meyer <Thomas.Meyer@idiap.ch>, <ithurtstom@gmail.com>
+Written by Thomas Meyer, Thomas.Meyer (at) idiap.ch , ithurtstom (a) gmail.com
 See LICENSE.txt for the GPL v3 license text under which this software is released.
 
 This package consists of the following:
@@ -75,7 +75,7 @@ Note that this can take time for a larger set of sentences, as a lot of queries 
 ./java -Xms1g -Xmx3g -jar /path/to/classifier/stanford-classifier.jar -props /path/to//models/(although|although|however|meanwhile|since|though|while|yet).prop
 
 In the prop-files, change the paths to the models and to the test sets.
-The classifier outputs a file classifier_answers.txt with the discourse relations and probabilities.
+The classifier outputs a file classifier_answers.txt with the predicted discourse relations and probabilities.
 The possible relations for the connectives are:
 
 although (contrast|concession)
@@ -89,6 +89,6 @@ yet (adv|contrast|concession)
 For an explanation and an example of the 36 features extracted, please see 'feature_list.txt'.
 The format is: feature name TAB example value
 
-If you would like to retrain your own models, the manual gold annotation in Europarl text can be obtained from https://www.idiap.ch/dataset/DiscoConn-Annotation
+If you would like to retrain your own models, the manual gold annotation in Europarl text can be obtained from https://www.idiap.ch/dataset/Disco-Annotation
 
-Please contact <Thomas.Meyer@idiap.ch> or <ithurstom@gmail.com> for any questions.
+Please contact Thomas.Meyer (at) idiap.ch or ithurstom (a) gmail.com for any questions.
