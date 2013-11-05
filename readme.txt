@@ -43,7 +43,7 @@ Dependencies:
 
 Install WordNet (http://wordnet.princeton.edu/) and set the environment variable WNHOME to its directory
 Install the perl module WordNet::QueryData from cpan: http://search.cpan.org/~jrennie/WordNet-QueryData-1.49/QueryData.pm
-You can point to it from the parsedUnseenExtractor.pl script in line 43.
+You can point to it from the parsedUnseenExtractor.pl script in line 53.
 Install the Stanford classifier (http://nlp.stanford.edu/software/classifier.shtml)
 
 Procedure:
